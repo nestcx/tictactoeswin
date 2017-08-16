@@ -15,14 +15,14 @@ namespace tictactoe
 		static int[,] win_set = new int[,] {
 			{0,1,2}, {3,4,5}, {6,7,8}, // rows
             {0,3,6}, {1,4,7}, {2,5,8}, // columns
-            //TODO: missing diagonal win conditions
+            {0,4,8}, {2,4,6}, // diagonal win conditions
         };
 
 		public static Boolean check_move(int move, string[] cells, string player)
 		{
 			// Return true if "move" is valid
 			// A move is valid if it's in range and cell does not contain "x" or "o"
-			if (move >= 0)
+			if ((move >= 0) && (move < 9))
 			{
 				if (cells[move] == " ")
 				{
@@ -32,7 +32,7 @@ namespace tictactoe
 				{
 					//TODO: Allowing moves to over-write some reason ... :(
 					Console.WriteLine(">> Sorry - that position is already taken!");
-					return true;
+                    return false;
 				}
 			}
 			else
@@ -47,7 +47,7 @@ namespace tictactoe
 			// If there is a win, return the "x" or "o" player
 			// If there is a tie, return "tie"
 			// If there is no winner (yet) then return empty string
-			for (int i = 0; i < 3; i++)
+			for  (int i = 0; i < win_set.Length; i++)
 			{
 				int[] row = { win_set[i, 0], win_set[i, 1], win_set[i, 2] };
 
