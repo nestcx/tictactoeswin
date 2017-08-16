@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 
 //TODO: Fix indentation and spaces
 //TODO: Strange mix of function names.
@@ -115,7 +115,7 @@ namespace tictactoe
 			}
 		}
 
-		public static void RenderBoard(string[] cells, string player, string winner)
+		public static void render_board(string[] cells, string player, string winner)
 		{
 			// Print the board using the current cell values
 			Console.Write(string.Format(
@@ -133,7 +133,7 @@ namespace tictactoe
 			}
 		}
 
-		public static void ShowHumanHelp()
+		public static void show_human_help()
 		{
 			// Show player help instructions
 			Console.Write(
@@ -161,10 +161,10 @@ namespace tictactoe
 			string winner = "";
 
 			// Show some nice hello / start message with help
-			ShowHumanHelp();
+			show_human_help();
 
 			// Show the initial empty board
-			RenderBoard(cells, player, winner);
+			render_board(cells, player, winner);
 
 			while (winner == "")
 			{
@@ -173,7 +173,7 @@ namespace tictactoe
 				// Update the game model
 				update_model(cells, ref player, move, ref winner);
 				// Display the current game board
-				RenderBoard(cells, player, winner);
+				render_board(cells, player, winner);
 
 			}
 			// Show the results
