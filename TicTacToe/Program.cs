@@ -3,6 +3,7 @@
 //TODO: Fix indentation and spaces
 //TODO: Strange mix of function names.
 //TODO: add random computer player?
+//TODO: make it able to handle invalid input
 
 namespace tictactoe
 {
